@@ -174,9 +174,9 @@ class LinkedIn {
    * 
    * Explicitly clears LinkedIn object from memory upon destruction.
 	 */
-  public function __destruct() {
-    unset($this);
-	}
+ //  public function __destruct() {
+ //    unset($this);
+	// }
 	
 	/**
 	 * Bookmark a job.
@@ -718,6 +718,7 @@ class LinkedIn {
 
 	if( defined( 'WORDPRESS_SOCIAL_LOGIN_DEBUG_API_CALLS' ) )
 	{
+		$this->http_info = array();
 		do_action( 'wsl_log_provider_api_call', 'OAuth1.LinkedIn', $url, $method, $data, $http_code, $this->http_info, $return_data['linkedin'] );
 	}
 	//-
